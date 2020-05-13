@@ -16,6 +16,7 @@ def pred_from_model(conv1_kernel,
     model = CapsuleNet(conv1_kernel,conv2_kernel)
     model.load_state_dict(torch.load(param_path))
     model.cuda()
+    model.train(False)
     
     print('>> note: predicting using the model:',param_path)
     
